@@ -1,0 +1,26 @@
+---
+- name: Make sure line 'dns=none' is set in /etc/NetworkManager/NetworkManager.conf
+  ini_file:
+    path: /etc/NetworkManager/NetworkManager.conf
+    state: present
+    no_extra_spaces: yes
+    section: main
+    option: dns
+    value: none
+    owner: root
+    group: root
+    mode: 0644
+    backup: yes
+  notify:
+    - Reload NetworkManager
+
+- name: Deploy resolv.conf template
+  template:
+    src: "{{ role_path }}/templates/resolv.conf.j2"
+    dest: /etc/resolv.conf
+    owner: root
+    group: root
+    mode: 0644
+    backup: yes
+  notify:
+    - Reload NetworkManager

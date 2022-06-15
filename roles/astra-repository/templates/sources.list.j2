@@ -1,0 +1,21 @@
+{% if ansible_hostname in groups['1.5'] %}
+
+{% endif %}
+{% if ansible_hostname in groups['1.6'] %}
+# Основной репозиторий (установочный диск)
+deb http://dl.astralinux.ru/astra/stable/1.6_x86-64/repository smolensk main contrib non-free
+# Актуальное оперативное обновление основного репозитория
+deb http://dl.astralinux.ru/astra/stable/1.6_x86-64/repository-update/ smolensk main contrib non-free
+# Диск со средствами разработки
+deb http://dl.astralinux.ru/astra/stable/1.6_x86-64/repository-dev/ smolensk main contrib non-free
+# Актуальное оперативное обновление диска со средствами разработки
+deb http://dl.astralinux.ru/astra/stable/1.6_x86-64/repository-dev-update/ smolensk main contrib non-free
+{% endif %}
+{% if ansible_hostname in groups['1.7'] %}
+# Основной репозиторий
+deb http://dl.astralinux.ru/astra/stable/1.7_x86-64/repository-main/     1.7_x86-64 main contrib non-free
+# Оперативные обновления основного репозитория
+deb http://dl.astralinux.ru/astra/stable/1.7_x86-64/repository-update/   1.7_x86-64 main contrib non-free
+# Базовый репозиторий
+deb http://dl.astralinux.ru/astra/stable/1.7_x86-64/repository-base/     1.7_x86-64 main contrib non-free
+{% endif %}

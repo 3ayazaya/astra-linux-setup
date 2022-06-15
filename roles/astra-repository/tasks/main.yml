@@ -1,0 +1,12 @@
+---
+- name: Deploy sources.list template
+  template:
+    src: "{{ role_path }}/templates/sources.list.j2"
+    dest: /etc/apt/sources.list
+    owner: root
+    group: root
+    mode: 0644
+    backup: yes
+- name: Update cache
+  apt:
+    update_cache: yes

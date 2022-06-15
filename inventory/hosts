@@ -1,0 +1,19 @@
+[astra-linux_servers]
+<host> ansible_host=<IP> ansible_ssh_user=<user> become=true become_user=root
+
+[1.5]
+
+[1.6]
+
+[1.7]
+
+[stage1]
+
+[stage2]
+
+[stage3]
+
+[stage4]
+
+[mail_servers]
+

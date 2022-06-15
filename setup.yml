@@ -1,0 +1,10 @@
+---
+
+- name: "Set up a Astra Linux 1.7 host"
+  hosts: "{{ target if target is defined else 'astra-linux_servers' }}"
+  become: true
+  roles:
+    - astra-hostname
+    - astra-networking
+    - astra-repository
+    - astra-update

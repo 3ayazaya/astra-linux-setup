@@ -1,0 +1,9 @@
+---
+- name: Update all packages to their latest version
+  apt:
+    name: "*"
+    state: latest
+
+- name: Upgrade the OS (apt-get dist-upgrade)
+  apt:
+    upgrade: dist

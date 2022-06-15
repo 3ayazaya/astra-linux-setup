@@ -1,0 +1,20 @@
+{% if ansible_hostname in groups['stage1'] %}
+search {{ domain }}
+nameserver 1.1.1.1
+nameserver 2.2.2.2
+{% endif %}
+{% if ansible_hostname in groups['stage2'] %}
+search {{ domain }}
+nameserver 3.3.3.3
+nameserver 4.4.4.4
+{% endif %}
+{% if ansible_hostname in groups['stage3'] %}
+search {{ domain }}
+nameserver 5.5.5.5
+nameserver 6.6.6.6
+{% endif %}
+{% if ansible_hostname in groups['stage4'] %}
+search {{ domain }}
+nameserver 7.7.7.7
+nameserver 8.8.8.8
+{% endif %}
